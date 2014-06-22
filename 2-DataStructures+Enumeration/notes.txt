@@ -53,15 +53,43 @@ passes 2 items into function (index, item)
 
 ...
 Core Enumeration Functions:
-( filter/remove | concat | first/rest | drop/take )
+( map | filter/remove | concat | first/rest | drop/take )
+
+( into | reduce | apply ) ... also neat with reductions
+apply is a nifty way to convert a seq into a normal data structure by passing a destructured list of arguments into a function
+
+// You can compose (split-at) from drop/take
 
 Variation Enumeration Functions:
+
+// rearranging seqs
+( flatten sort shuffle )
+
+// Just because I love it
+(partition 3 1 text) => extract 3-gram and entities
+(partition-by ...) => I really like this one as well
 
 Make a seq smaller.
  - There are two main ones filter and remove.
 Make a seq larger.
  - Main one is concat. All others are a variation on this theme.
 Take Head / Take Tail
+
+Map is your bread and butter... What the sky-hook was to Kareem Abdul-Jabbar map is to you. Map is the single most important data structure. Map is the single most important function.
+
+You can pass as many arguments into map as you want. Each (nth) item of the map will be passed into that function as an argument.
+
+Go from a seq back to a collection.
+
+***
+
+Teach the core enumeration methods
+- NLP n-gram extraction and replace for an exercise.
+  .. (partition, replace, frequencies, group-by)
+  .. start slicking it up with NLP shiz.
+
+
+
 
 
 

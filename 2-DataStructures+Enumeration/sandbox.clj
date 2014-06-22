@@ -103,17 +103,94 @@
 
 ; 5/ Rearragnement of a seq
 
+; flatten => takes one argument, flattens into one data structure
+(flatten [1 2 3 [4 5 [6 7 [8 9 10 11] 12]]])
+
+; reverse
+(reverse [9 8 7])
+
+; sort => sorts by comparator, comparator must implement Java.util.Comparator
+(sort ["a" "x" "b" "c"])
+
+; sort-by => sort with a custom comparator
+
+; shuffle => returns a random permutation of coll
+(shuffle (range 10))
+
 ; 6/ Create nested seqs
 
+; split-at => splits a seq by taking [(take n coll) (drop n coll)]
+(split-at 5 (range 10))
+
+; split-with => splits with a function [(take-while pred coll) (drop-while pred coll)]
+(split-with #(> 10 %) (range 25))
+
+; partition => use for nlp to extract every n-gram
+; (partition 3 1 text)
+(partition 3 1 (clojure.string/split "I live in New York City." #"\s+"))
+
+; partition-all => like partition only returns < n grams at the end
+
+; partition-by => partitions every time the predicate function returns a new value
+(partition-by #(= 3 %) [1 2 3 4 5 6 7 8 3 9 10 11 12 3 15])
+
 ; 7/ Process each item in a seq
+
+; map
+(map #(+ %1 %2) [1 2 3 4 5] [6 7 8 9 10 11])
+
+; pmap
+(pmap #(+ %1 %2) [1 2 3 4 5] [6 7 8 9 10 11])
+
+; mapcat => touched this above...
+
+; replace => replaces any instances of key in collection with value
+(replace {:a "jordan" :b "steve"} [:a :b :c :d :e :f :a :g])
+
+; map-indexed => each with index
+(map-indexed (fn [index item] (* index index)) [1 2 3 4 5 11])
+
+; seque ??? wtf is this thing and should I care?
 
 ;; USING SEQ
 
 ; 1/ Extract specific numbered item from a seq
 
+; first (first x)
+; ffirst (first (first x))
+; nfirst (next (first x))
+; second (first (next x))
+; nth
+; when-first ... like if-let but for binding to first element in seqs
+; last
+; rand-nth ... random number from seq
+
 ; 2/ Construct a collection from a seq
 
+; zipmap
+(zipmap [:firstname :lastname] ["jordan" "leigh"])
+
+; into
+(into [] #{5})
+
+; reduce => explain how reduce works...
+; takes a function of two arguments will go from (0,1) -> (memo, 2)
+(reduce #(+ %1 %2) (range 1 100))
+
+; set
+; vec
+; into-array
+; to-array-2d
+; frequencies
+; group-by
+(group-by even? (range 10))
+
 ; 3/ Pass items of a seq as arguments to a function
+; apply destructures a seq into it's individual arguments and passes them all as individual arguments to a function
+
+; (+ 1 2 3 4 5)
+; (apply + [1 2 3 4 5]) -> destructure the seq ... pass the destructured args in as a group to the named function
+(apply + [1 2 3 4 5])
 
 ; 4/ Compute a boolean from a seq
 
