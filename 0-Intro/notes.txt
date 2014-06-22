@@ -1,0 +1,17 @@
+Unlike say... every single book written about Clojure. This is a no-nonsense introduction to Clojure.
+
+I'm really tired of hearing about dojo's and zen and tao. And the Joy of Clojure, and the zen of Clojure and want people to get off their high horse for a minute and realize that the current clojure community's idea of learning resources is a giant circlejerk, not a concentrated effort to make things approachable for beginners.
+
+Who cares about low level byte code compiler optimizations. Want to actually understand what macros are? We have a whole chapter dedicated to that called "By the end of this fucking chapter, you will finally understand what macros are"
+
+Get lost with crazy diagrams talking about thread safety? We walk you through a no nonsense explanation of atoms, refs, agents and writing asynchronous code in Clojure. We jam pack with examples like building scrapers to scrape Wikipedia, and perform Natural Language Processing tasks.
+
+We take you on a tour that covers every thing you need to know about Clojure. Datomic, ClojureScript.
+
+***
+
+The Clojure community has an achilles heel. Arrogance. Always Be Clojing is my contribution. I want to make it easy and fun to get started with Clojure and the immutable ecosystem.
+
+The book is pay what you want model. If you pay more than the median donation your copy of the book will come with three extra chapters. Drunk Datomic , and a subscription to the ClojureScript book which is still in progress.
+
+***

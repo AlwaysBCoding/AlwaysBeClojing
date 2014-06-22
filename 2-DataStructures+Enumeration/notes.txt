@@ -1,0 +1,75 @@
+The SEQ abstraction
+
+Take a seq as input, then return a seq
+
+Iterate over all items in a seq, then return a seq
+- map
+- filter
+
+* All of the core Clojure collections are immutable and persistent
+You can call seq on any clojure collection to turn it into a sequence -> thus you can use any sequence function on a collection
+
+IPersistentCollection and ISeq
+You can check if data structures implement these interfaces with (seq? x) and (coll? x) respectively.
+
+1/ Vectors
+2/ Lists
+3/ Sets
+4/ Maps
+5/ Strings
+6/ Lazy Sequences
+
+All you need to know is that all of these things are collections.
+[1 2 3]
+'(1 2 3)
+#{1 2 3}
+{:a 1 :b 2 :c 3}
+"123"
+(range 1 4)
+
+* note a map is a coll. When you use it in a seq it transforms into a 2-tuple [:a b] * you can concat a vector and a map because it turns it into a seq
+...
+
+Vocabulary
+Collection -> Coll
+Function -> f
+Anonymous function -> pred
+Item -> item
+Index -> index
+X -> x
+Seperator -> sep
+Number -> n
+...
+
+In clojure things can be infinite... Like (cycle collection). This function will infinitely cycle through each item in the collection, but since it doesn't get evaluated until you ask for a finite number it doesn't break.
+
+...
+
+The structure of an enumeration function. It will take two arguments normally, an anonymous or named function, and a collection. It will enumerate the collection in some way based on the predicate. Each enumeration it will pass something in to be bound to the variable. This can be one or more things depending on the function.
+
+(keep-indexed)
+2 arguments -> function, collection
+passes 2 items into function (index, item)
+
+...
+Core Enumeration Functions:
+( filter/remove | concat | first/rest | drop/take )
+
+Variation Enumeration Functions:
+
+Make a seq smaller.
+ - There are two main ones filter and remove.
+Make a seq larger.
+ - Main one is concat. All others are a variation on this theme.
+Take Head / Take Tail
+
+
+
+
+
+
+
+
+
+
+
