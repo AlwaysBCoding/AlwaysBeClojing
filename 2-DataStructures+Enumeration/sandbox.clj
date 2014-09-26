@@ -193,6 +193,13 @@
 (apply + [1 2 3 4 5])
 
 ; 4/ Compute a boolean from a seq
+; not-empty
+; some
+; seq?
+; every?
+; not-every?
+; not-any?
+; empty?
 
 ; 5/ Search a seq using a predicate
 
